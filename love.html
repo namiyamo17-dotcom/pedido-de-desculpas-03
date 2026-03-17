@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me Desculpa - November Rain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --bg-dark: #0a0a0b;
+            --glass-bg: rgba(20, 20, 25, 0.85);
+            --text-light: #f1f1f1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Efeito de Chuva Animada */
+        .rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(20,20,30,0.95));
+            pointer-events: none;
+        }
+
+        .drop {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.15);
+            width: 1px;
+            height: 60px;
+            top: -100px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(110vh); }
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 50px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 20px;
+            color: var(--text-light);
+            text-shadow: 0 0 20px rgba(230, 57, 70, 0.6);
+        }
+
+        .apology-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 650px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Spotify Player */
+        .player-container {
+            margin: 40px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+        }
+
+        /* Letras (Duas Colunas) */
+        .lyrics-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: var(--glass-bg);
+            padding: 45px;
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 50px;
+            text-align: left;
+        }
+
+        .lyrics-column h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Botão Romântico */
+        .footer-action {
+            margin: 60px 0 100px;
+        }
+
+        .btn-perdao {
+            display: inline-block;
+            padding: 20px 60px;
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .btn-perdao:hover {
+            background: var(--primary-color);
+            box-shadow: 0 0 40px rgba(230, 57, 70, 0.7);
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .lyrics-section {
+                grid-template-columns: 1fr;
+                padding: 25px;
+            }
+            .lyrics-column h3 { margin-bottom: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="rain" id="rain"></div>
+
+    <div class="container">
+        <header>
+            <h1>Não Me Deixe Caminhando na Chuva Sem Você...💔
+                <br>EU AMO VOCÊ DE VERDADE</br>
+            </h1>
+            <p class="apology-text">
+                "Nada dura para sempre, nem mesmo a chuva fria de novembro." <br>
+                Eu sei que errei e que as coisas ficaram difíceis, mas assim como na música, eu acredito que ainda podemos encontrar um caminho. Você é o meu refúgio na tempestade.
+            </p>
+        </header>
+
+<video width="600" autoplay muted controls>
+  <source src="video_2026-03-16_23-38-15.mp4" type="video/mp4">
+</video>
+</iframe>
+            <div class="lyrics-column">
+    <h3>Original Lyrics</h3>
+    <p>When I look into your eyes<br>I can see a love restrained<br>But darlin' when I hold you<br>Don't you know I feel the same?</p>
+    
+    <p>Nothin' lasts forever<br>And we both know hearts can change<br>And it's hard to hold a candle<br>In the cold November rain</p>
+    
+    <p>We've been through this such a long long time<br>Just tryin' to kill the pain, ooh yeah</p>
+    
+    <p>Love is always coming, love is always going<br>No one's really sure who's lettin' go today<br>Walking away</p>
+    
+    <p>If we could take the time to lay it on the line<br>I could rest my head just knowin' that you were mine<br>All mine</p>
+    
+    <p>So if you want to love me then darlin' don't refrain<br>Or I'll just end up walkin' in the cold November rain</p>
+    
+    <p>Do you need some time on your own?<br>Do you need some time all alone?<br>Ooh, everybody needs some time on their own<br>Ooh, don't you know you need some time all alone</p>
+    
+    <p>I know it's hard to keep an open heart<br>When even friends seem out to harm you<br>But if you could heal a broken heart<br>Wouldn't time be out to charm you?</p>
+    
+    <p>Sometimes I need some time on my own<br>Sometimes I need some time all alone<br>Ooh, everybody needs some time on their own<br>Ooh, don't you know you need some time all alone</p>
+    
+    <p>And when your fears subside<br>And shadows still remain, oh yeah<br>I know that you can love me when there's no one left to blame</p>
+    
+    <p>So never mind the darkness, we still can find a way<br>'Cause nothin' lasts forever, even cold November rain</p>
+    
+    <p>Don't ya think that you need somebody?<br>Don't ya think that you need someone?<br>Everybody needs somebody<br>
+ <P> <h3>MARLON: Eu estava ouvindo November Rain e percebi que a música fala muito sobre o que estou sentindo. Ela fala que o amor nem sempre é fácil, que as pessoas se machucam e que às vezes os corações mudam… mas mesmo assim ainda existe sentimento.
+
+Quando ele canta que nada dura para sempre e que é difícil segurar uma vela no frio da chuva de novembro, pra mim parece alguém com medo de perder a pessoa que ama.
+
+Eu não queria que a nossa história terminasse assim. Mesmo com erros, o que eu sinto por você é real. Eu ainda me importo, ainda penso em nós dois e queria ter a chance de consertar as coisas.
+
+Se você puder me perdoar, eu realmente queria tentar fazer dar certo de novo.</h3></P>
+        <div class="footer-action">
+            <button class="btn-perdao" onclick="perdoar()">Você me perdoa?</button>
+        </div>
+    </div>
+
+    <script>
+        function createRain() {
+            const rainContainer = document.getElementById('rain');
+            const dropCount = 120;
+
+            for (let i = 0; i < dropCount; i++) {
+                const drop = document.createElement('div');
+                drop.classList.add('drop');
+                drop.style.left = Math.random() * 100 + 'vw';
+                drop.style.animationDuration = (Math.random() * 1.5 + 0.8) + 's';
+                drop.style.animationDelay = Math.random() * 3 + 's';
+                drop.style.opacity = Math.random() * 0.4;
+                rainContainer.appendChild(drop);
+            }
+        }
+
+        function perdoar() {
+            alert("Minha vida é melhor com você... ❤️ Obrigado por me perdoar.");
+        }
+
+        createRain();
+    </script>
+</body>
+</html>
